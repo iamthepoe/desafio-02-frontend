@@ -31,7 +31,7 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
     localStorage['token'] = data.token;
 
     if(response.status === 201){
-      alert('Login Realizado com Sucesso!')
+      alert('Cadastro Realizado com Sucesso!')
       handleUserRedirect();
     }else{
         alert("Algo de errado ocorreu.");
@@ -39,7 +39,7 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
   }
 
   return (
-    <>
+    <section className="flex flex-col justify-center align-center text-center gap-3">
       <form
         id="form"
         className="
@@ -52,6 +52,7 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
         }}
       >
         <input
+          className="text-white"
           placeholder="Nome de Usuário"
           type="text"
           required
@@ -59,6 +60,7 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
         />
 
         <input
+          className="text-white"
           placeholder="Email"
           type="email"
           required
@@ -66,6 +68,7 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
         />
 
         <input
+          className="text-white"
           placeholder="Senha"
           type="password"
           required
@@ -78,7 +81,7 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
             <div key={index}>
               <input
                 placeholder="DDD"
-                className="mx-2"
+                className="mx-2 text-white"
                 type="text"
                 maxLength={2}
                 minLength={2}
@@ -87,6 +90,7 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
               />
 
               <input
+                className="text-white"
                 placeholder="Número"
                 type="text"
                 maxLength={9}
@@ -98,16 +102,16 @@ export default function SignUp({handleLoginRedirect, handleUserRedirect}) {
           ))}
         </div>
 
-        <button type="submit">
+        <button type="submit" className="bg-lime-500 w-44 h-8">
             Enviar
         </button>
       </form>
-      <small 
-        className="text-blue-800 underline hover:cursor-pointer"
+      <p
+        className="text-lime-500 underline hover:cursor-pointer"
         onClick={handleLoginRedirect}
       >
         Já possui cadastro? Clique para fazer o Login.
-      </small>
-    </>
+      </p>
+    </section>
   );
 }

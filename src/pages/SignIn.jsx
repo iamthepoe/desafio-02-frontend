@@ -29,7 +29,7 @@ export default function SignIn({handleSignUpRedirect, handleUserRedirect}) {
   }
 
   return (
-    <>
+    <section className="flex flex-col justify-center align-center text-center gap-3">
       <form
         id="form"
         className="
@@ -42,6 +42,7 @@ export default function SignIn({handleSignUpRedirect, handleUserRedirect}) {
         }}
       >
         <input
+        className="text-white"
           placeholder="Email"
           type="email"
           required
@@ -49,6 +50,7 @@ export default function SignIn({handleSignUpRedirect, handleUserRedirect}) {
         />
 
         <input
+            className="text-white"
           placeholder="Senha"
           type="password"
           required
@@ -56,17 +58,17 @@ export default function SignIn({handleSignUpRedirect, handleUserRedirect}) {
           onChange={(e) => setUser({ ...user, password: e.target.value })}
         />
 
-        <button type="submit">
+        <button type="submit" className="bg-lime-500 w-44 h-8">
             Enviar
         </button>
       </form>
 
-      <small 
-        className="text-blue-800 underline hover:cursor-pointer"
+      <p
+        className="text-lime-500 underline hover:cursor-pointer"
         onClick={handleSignUpRedirect}
       >
-        Não possui cadastro? Clique para fazê-lo.
-      </small>
-    </>
+        Ainda não possui conta? Clique aqui para cadastrar.
+      </p>
+    </section>
   );
 }

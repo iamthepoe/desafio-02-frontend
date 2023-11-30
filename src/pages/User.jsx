@@ -29,7 +29,7 @@ export default function User({handleLoginRedirect}) {
   }, []);
 
   return (
-    <>
+    <section className="flex flex-col justify-center align-center text-center gap-3">
       <form
         id="form"
         className="
@@ -38,6 +38,7 @@ export default function User({handleLoginRedirect}) {
         "
       >
         <input
+        className="text-white"
           placeholder="Nome de Usuário"
           type="text"
           required
@@ -46,6 +47,7 @@ export default function User({handleLoginRedirect}) {
         />
 
         <input
+        className="text-white"
           placeholder="Email"
           type="email"
           required
@@ -59,7 +61,7 @@ export default function User({handleLoginRedirect}) {
               <div key={index}>
                 <input
                   placeholder="DDD"
-                  className="mx-2"
+                  className="mx-2 text-white"
                   type="text"
                   maxLength={2}
                   minLength={2}
@@ -68,6 +70,7 @@ export default function User({handleLoginRedirect}) {
                 />
 
                 <input
+                className="text-white"
                   placeholder="Número"
                   type="text"
                   maxLength={9}
@@ -78,13 +81,16 @@ export default function User({handleLoginRedirect}) {
               </div>
             ))}
         </div>
+        <button 
+            className="bg-red-500 w-44 h-8"
+            onClick={()=>{
+                localStorage.token = undefined;
+                handleLoginRedirect();
+            }}>
+            Sair
+        </button>
       </form>
-      <button onClick={()=>{
-        localStorage.token = undefined;
-        handleLoginRedirect();
-      }}>
-        Sair
-      </button>
-    </>
+      
+    </section>
   );
 }

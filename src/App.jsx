@@ -9,10 +9,11 @@ function App() {
 
   return (
     <>
-      <main className='flex flex-col h-[100vh] w-full justify-center items-center'>
+      <main className='flex flex-col h-[100vh] w-full justify-center items-center bg-[#0f0f0f]'>
         <div className='flex flex-col w-full h-28 items-center gap-1'>
-          <h1 className='text-3xl'>Escribo</h1>
-          <h2>Inovação para o aprendizado</h2>
+          <h1 className='text-3xl text-white' id='logo'>Escribo Accounts!</h1>
+          <h2 id='logo' className='text-white'>Inovação para o aprendizado.</h2>
+        </div>
           {page === 'signup' ? (
             <SignUp 
               handleLoginRedirect={() => setPage('login')} 
@@ -30,7 +31,7 @@ function App() {
           {page === 'user' ? (
             <User handleLoginRedirect={() => setPage('login')} />
           ) : null}
-        </div>
+
       </main>
     </>
   )
