@@ -1,3 +1,3 @@
-const URL="https://escribo-wgmh.onrender.com";
+const URL="http://escribo.brazilsouth.cloudapp.azure.com";
 
 export {URL};
