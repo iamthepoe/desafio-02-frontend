@@ -1,3 +1,3 @@
-const URL="http://localhost:3000";
+const URL="https://escribo-wgmh.onrender.com";
 
 export {URL};
